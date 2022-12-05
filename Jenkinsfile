@@ -26,14 +26,14 @@ pipeline {
         stage("Deploy on Test"){
             steps{
             // deploy on container -> plugin
-                deploy adapters: [tomcat9(credentialsId: 'git-cred', path: '', url: 'http://54.84.49.65:8080/')], contextPath: 'slavef', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'git-cred', path: '', url: 'http://54.84.49.65:8080/')], contextPath: 'slavef', war: '*/*.war'
             }
             
         }
         stage("Deploy on Prod"){
             steps{
                 // deploy on container -> plugin
-                deploy adapters: [tomcat9(credentialsId: 'git-cred', path: '', url: 'http://54.84.49.65:8080/')], contextPath: 'slavef', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'git-cred', path: '', url: 'http://54.84.49.65:8080/')], contextPath: 'slavef', war: '*/*.war'
             }
         }
     }

@@ -1,5 +1,9 @@
 pipeline {
-    node ('jenkins-slave-2')
+    agent {
+  label {
+        label "jenkins-slave-2"
+  }
+}
      tools {
         maven 'MAVEN_HOME' 
         }
